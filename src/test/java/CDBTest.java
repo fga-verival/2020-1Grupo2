@@ -16,4 +16,13 @@ public class CDBTest {
 
         assertEquals(13.97d, c.getRendimentoBruto(), 0);
     }
+
+    @Test
+    public void getRendimentoBrutoTeste2(){
+        c.setDias(420);
+        c.setValorInicial(250);
+        c.setTaxaDeJurosAnual(0.08);
+
+        assertEquals(23.01d, c.getRendimentoBruto(), 0);
+    }
 }
