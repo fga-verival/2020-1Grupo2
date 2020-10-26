@@ -1,3 +1,7 @@
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+
 public class CDB {
     private int dias;
     private double valorInicial, taxaDeJurosAnual, tributacaoIR;
@@ -8,8 +12,11 @@ public class CDB {
         this.tributacaoIR = dias <= 180? 22.5:dias <= 360? 20.0:dias<=720?17.5:15.0;
     }
     public double getRendimentoBruto(){
-        //técnica da falsificação
-        return 13.97d;
+        return BigDecimal.valueOf(valorInicial*taxaDeJurosAnual*getFracaoAno(dias)).setScale(2, RoundingMode.HALF_EVEN).doubleValue();
+    }
+
+    private double getFracaoAno(int dias){
+        return dias/365d;
     }
 
     public int getDias() {
