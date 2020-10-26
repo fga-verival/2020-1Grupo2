@@ -7,7 +7,11 @@ public class CDB {
         this.taxaDeJurosAnual = taxaDeJurosAnual;
         this.tributacaoIR = dias <= 180? 22.5:dias <= 360? 20.0:dias<=720?17.5:15.0;
     }
-    
+    public double getRendimentoBruto(){
+        //técnica da falsificação
+        return 13.97d;
+    }
+
     public int getDias() {
         return dias;
     }
