@@ -3,19 +3,27 @@ import java.math.RoundingMode;
 
 public class CDB {
     private int dias;
-    private double valorInicial, taxaDeJurosAnual, tributacaoIR;
+    private double valorInicial;
+    private double taxaDeJurosAnual;
+    private double tributacaoIR;
+
     public CDB(int dias, double valorInicial, double taxaDeJurosAnual) {
         this.dias = dias;
         this.valorInicial = valorInicial;
         this.taxaDeJurosAnual = taxaDeJurosAnual;
-        this.tributacaoIR = dias <= 180? 22.5:dias <= 360? 20.0:dias<=720?17.5:15.0;
-    }
-    public double getRendimentoBruto(){
-        return BigDecimal.valueOf(valorInicial*taxaDeJurosAnual*getFracaoAno(dias)).setScale(2, RoundingMode.HALF_EVEN).doubleValue();
+        this.tributacaoIR = dias <= 180 ? 22.5 : dias <= 360 ? 20.0 : dias <= 720 ? 17.5 : 15.0;
     }
 
-    private double getFracaoAno(int dias){
-        return dias/365d;
+    public double getRendimentoBruto() {
+        return BigDecimal.valueOf(valorInicial * taxaDeJurosAnual * getFracaoAno(dias)).setScale(2, RoundingMode.HALF_EVEN).doubleValue();
+    }
+
+    public double getImpostoRenda() {
+        return BigDecimal.valueOf(3.14).setScale(2, RoundingMode.HALF_EVEN).doubleValue();
+    }
+
+    private double getFracaoAno(int dias) {
+        return dias / 365d;
     }
 
     public int getDias() {
@@ -48,6 +56,7 @@ public class CDB {
     }
 
     public void setTributacaoIR(int dias) {
-        this.tributacaoIR = dias <= 180? 22.5:dias <= 360? 20.0:dias<=720?17.5:15.0;
+        this.tributacaoIR = dias <= 180 ? 22.5 : dias <= 360 ? 20.0 : dias <= 720 ? 17.5 : 15.0;
     }
+
 }
