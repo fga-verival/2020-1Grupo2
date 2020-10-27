@@ -18,7 +18,7 @@ public class CDB {
         return BigDecimal.valueOf(valorInicial * taxaDeJurosAnual * getFracaoAno(dias)).setScale(2, RoundingMode.HALF_EVEN).doubleValue();
     }
 
-    public double getImpostoRenda() {
+    public double getImpostoDeRenda() {
         double rendimentoBruto = this.getRendimentoBruto();
 
         return BigDecimal.valueOf(rendimentoBruto * tributacaoIR/100).setScale(2, RoundingMode.HALF_EVEN).doubleValue();
