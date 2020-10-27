@@ -11,11 +11,11 @@ public class CDBImpostoRendaTest {
         CDB c = new CDB(0, 0.0, 0.0);
 
         // Teste por falsificação
-        c.setDias(60);
-        c.setValorInicial(1000);
-        c.setTaxaDeJurosAnual(0.085);
-        c.setTributacaoIR(60);
-        assertEquals(3.14, c.getImpostoRenda(), 0);
+        c.setDias(120);
+        c.setValorInicial(500);
+        c.setTaxaDeJurosAnual(0.080);
+        c.setTributacaoIR(120);
+        assertEquals(2.96, c.getImpostoRenda(), 0);
     }
 
 }
