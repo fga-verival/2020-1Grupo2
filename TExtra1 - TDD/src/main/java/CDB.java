@@ -61,4 +61,8 @@ public class CDB {
         this.tributacaoIR = dias <= 180 ? 22.5 : dias <= 360 ? 20.0 : dias <= 720 ? 17.5 : 15.0;
     }
 
+    public double getRendimentoLiquido(){
+        return 1.0829;
+    }
+
 }

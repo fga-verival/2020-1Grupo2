@@ -13,9 +13,7 @@ public class CDBRendimentoLiquidoTest {
         c.setDias(60);
         c.setValorInicial(1000);
         c.setTaxaDeJurosAnual(8.5);
-        double rendimentoBruto = c.getRendimentoBruto();
-        System.out.println(rendimentoBruto);
-        rendimentoLiquido = c.getRendimentoLiquido();
-        assertEquals(rendimentoLiquido, 1.0829);
+        double rendimentoLiquido = c.getRendimentoLiquido();
+        assertEquals(rendimentoLiquido, 1.0829, 0);
     }
 }
