@@ -14,6 +14,15 @@ public class CDBRendimentoLiquidoTest {
         c.setValorInicial(1000);
         c.setTaxaDeJurosAnual(8.5);
         double rendimentoLiquido = c.getRendimentoLiquido();
-        assertEquals(rendimentoLiquido, 1.0829, 0);
+        assertEquals(1.0829,rendimentoLiquido,  0);
+    }
+
+    @Test
+    public void getRendimentoLiquidoCorrect2(){
+        c.setDias(120);
+        c.setValorInicial(500);
+        c.setTaxaDeJurosAnual(8.0);
+        double rendimentoLiquido = c.getRendimentoLiquido();
+        assertEquals(2.0384, rendimentoLiquido, 0);
     }
 }
