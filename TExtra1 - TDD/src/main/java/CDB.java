@@ -62,7 +62,8 @@ public class CDB {
     }
 
     public double getRendimentoLiquido(){
-        return 1.0829;
+        double rendimentoLiquido = (getRendimentoBruto()-this.getImpostoDeRenda())/this.valorInicial;
+        return BigDecimal.valueOf(rendimentoLiquido).setScale(4, RoundingMode.HALF_EVEN).doubleValue();
     }
 
 }
