@@ -6,6 +6,7 @@ public class CDB {
     private double valorInicial;
     private double taxaDeJurosAnual;
     private double tributacaoIR;
+    private double rendimentoBruto;
 
     public CDB(int dias, double valorInicial, double taxaDeJurosAnual) {
         this.dias = dias;
@@ -61,6 +62,9 @@ public class CDB {
         this.tributacaoIR = dias <= 180 ? 22.5 : dias <= 360 ? 20.0 : dias <= 720 ? 17.5 : 15.0;
     }
 
+    public void setRendimentoBruto(double rendimentoBruto){
+        this.rendimentoBruto = rendimentoBruto;
+    }
     public double getRendimentoLiquido(){
         double rendimentoLiquido = (getRendimentoBruto()-this.getImpostoDeRenda())/this.valorInicial;
         return BigDecimal.valueOf(rendimentoLiquido).setScale(4, RoundingMode.HALF_EVEN).doubleValue();
