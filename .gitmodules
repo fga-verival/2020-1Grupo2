@@ -1,0 +1,6 @@
+[submodule "reliability-api"]
+	path = reliability-api
+	url = https://github.com/Testes-de-Software-Confiabilidade/reliability-api
+[submodule "reliability-scripts"]
+	path = reliability-scripts
+	url = https://github.com/Testes-de-Software-Confiabilidade/reliability-scripts
